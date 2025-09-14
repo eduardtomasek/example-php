@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.home-content h1 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.home-content p {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.package-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.package-info h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.package-info ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.package-info li {
+    color: #27ae60;
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.click-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.click-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    background: linear-gradient(45deg, #ee5a52, #ff6b6b);
+}
+
+.click-btn:active {
+    transform: translateY(-1px);
+}
+
+.time-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(45deg, #3498db, #9b59b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.time-extra {
+    background: rgba(46, 204, 113, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border-left: 4px solid #2ecc71;
+}
+
+.time-extra p {
+    margin: 0.5rem 0;
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.back-btn {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    margin-top: 1rem;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.error-content h1 {
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.debug-content {
+    text-align: left;
+}
+
+.debug-content h2 {
+    text-align: center;
+    color: #8e44ad;
+    margin-bottom: 1rem;
+}
+
+.dump-output {
+    background: #2c3e50;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    font-family: monospace;
+    font-size: 0.8rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.debug-info {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .time-display {
+        font-size: 2rem;
+    }
+    
+    .click-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .debug-info {
+        position: relative;
+        margin-top: 1rem;
+    }
+}

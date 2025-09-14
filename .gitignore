@@ -1,0 +1,17 @@
+# .gitignore for PHP project
+/vendor/
+/.env
+/node_modules/
+*.log
+*.cache
+*.tmp
+.DS_Store
+.idea/
+.vscode/
+composer.lock
+.env.*
+# Ignore Docker artifacts
+*.pid
+*.sock
+# Ignore OS generated files
+Thumbs.db

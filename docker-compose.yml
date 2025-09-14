@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-php-app
+    ports:
+      - "8080:80"
+    volumes:
+      # Bind mount pro live reload - excluduje vendor složku
+      - .:/var/www/html:cached
+      # Exclude vendor - nechá vendor z Docker image
+      - /var/www/html/vendor
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+      - COMPOSER_ALLOW_SUPERUSER=1
+    # Pro development - automatický restart při změnách v compose souboru
+    restart: unless-stopped
+    
+  # Development helper - composer service pro správu balíčků
+  composer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: composer-helper
+    volumes:
+      - .:/var/www/html:cached
+      - /var/www/html/vendor
+    working_dir: /var/www/html
+    command: composer install --no-dev --optimize-autoloader
+    profiles:
+      - tools  # Spustí se pouze s --profile tools
+    
+  # Volitelný: file watcher pro pokročilejší live reload
+  # file-watcher:
+  #   image: node:18-alpine
+  #   container_name: file-watcher
+  #   volumes:
+  #     - .:/app
+  #   working_dir: /app
+  #   command: sh -c "npm install -g nodemon && nodemon --watch . --ext php,css,js --exec 'echo File changed at $(date)'"

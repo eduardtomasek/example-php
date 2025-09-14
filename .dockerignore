@@ -1,0 +1,48 @@
+# Exclude vendor directory - will be installed in Docker
+vendor/
+
+# Exclude composer.lock - will be generated in Docker
+composer.lock
+
+# Development files
+.git
+.gitignore
+README.md
+Makefile
+dev-commands.sh
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files (if you add them later)
+.env
+.env.local
+.env.*.local
+
+# Test files
+tests/
+phpunit.xml
+.phpunit.result.cache
+
+# Node modules (if you add frontend tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
